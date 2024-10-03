@@ -29,6 +29,7 @@ function App() {
         age: '',
         gender: '',
         proLang: '',
+        rating:'',
         checkbox: false
     });
 
@@ -78,6 +79,13 @@ function App() {
         });
     };
 
+    //Guardar el  rating
+    const handleRating =(e)=>{
+        setData({
+            ...data,
+            rating:e.target.value
+        })
+    }
     //Guardar la confirmacion de terminos y condiciones
     const handleCheckboxChange = (e) => {
         setData({
@@ -94,6 +102,7 @@ function App() {
             age: '',
             gender: '',
             proLang: '',
+            rating: '',
             checkbox: false
         });
     };
@@ -196,7 +205,7 @@ function App() {
                 <Box sx={{mt: 2}}>
                     {/*Puntuacion*/}
                     <Typography variant="h6">Puntúa esta encuesta
-                        <Rating name="survey-rating" defaultValue={2.5} precision={0.5}/>
+                        <Rating name="survey-rating" defaultValue={2.5} precision={0.5} onChange={handleRating}/>
                     </Typography>
 
                 </Box>
